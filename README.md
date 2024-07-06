@@ -5,4 +5,4 @@
 
 ##Hi! Im Gaia and Im a mom too now :heart: 
 
-##My name is Kaia and i like programming.
+## My name is Kaia and i like programming.
