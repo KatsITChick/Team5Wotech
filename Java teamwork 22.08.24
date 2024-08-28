@@ -1,0 +1,37 @@
+1.  Calculate total Sales by City
+SELECT Owners.City, SUM(Procedures.Price) AS TotalSales
+FROM Sales 
+LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+GROUP BY Owners.City
+ORDER By TotalSales DESC;
+
+2. Calculate total Sales by Pet Kind
+SELECT Pets.Kind, SUM(Procedures.Price) AS TotalSales
+FROM Sales 
+LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+GROUP BY Pets.Kind
+ORDER By TotalSales DESC;
+
+3. Calculate total Sales by City and Pet Kind
+SELECT Pets.Kind, Owners.City, SUM(Procedures.Price) AS TotalSales
+FROM Sales 
+LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+GROUP BY Pets.Kind, Owners.City
+ORDER By TotalSales DESC;
+
+4. Calculate Average sales by City
+SELECT Owners.City, AVG(Procedures.Price) AS AverageSales
+FROM Sales 
+LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+GROUP BY Owners.City
+ORDER By AverageSales DESC;
+
+5. If you have additional time, explore relationships with SQLight
+
