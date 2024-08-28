@@ -1,0 +1,36 @@
+Java Teamwork 21.08.24
+
+Use our Pet clinics files
+Use online free SQLight platform https://sqliteonline.com/
+
+1. SELECT * FROM Pets WHERE LENGTH(Name) = 5;
+
+2. SELECT * FROM Pets WHERE Name LIKE '%er';
+So, this query will return all rows from the Pets table where the Name column ends with "er"
+(SELECT *: This part of the query selects all columns from the specified table.
+FROM Pets: This specifies that the data is being retrieved from the Pets table.
+WHERE Name LIKE '%er': The LIKE clause is used to filter rows based on a pattern. The % symbol is a wildcard that matches any sequence of characters. Here, it indicates that the name should end with "er")
+
+3. SELECT DISTINCT Kind FROM Pets;
+As a result, the query returns all the different types or species of pets listed in the Pets table. For example, if the table contains "dog," "cat," and "dog," the query will return only "dog" and "cat."
+
+4. SELECT * FROM Pets WHERE Sex='male';
+This will return all rows from the Pets table where the pets are male.
+
+5. SELECT * FROM Pets WHERE Kind='Bird';
+
+6. SELECT * FROM Pets WHERE Age between 10 and 15;
+
+7. SELECT AVG(Age) AS AverageDogAge FROM Pets WHERE Kind='Dog';
+
+8. SELECT * FROM Pets ORDER BY Age DESC LIMIT 1;
+Returns the details of the oldest pet in the Pets table.
+
+9. SELECT Kind, Name, MIN(Age) AS YoungestAge FROM Pets GROUP By Kind;
+
+10. SELECT Name, COUNT(*) AS NameCount FROM Pets GROUP BY Name ORDER BY NameCount DESC LIMIT 1;
+Returns the most common pet name in the Pets table along with the number of times it appears. (SELECT Name, COUNT(*) AS NameCount: Selects the Name column and counts how often each name appears. The count is given an alias NameCount. FROM Pets: Specifies that the data should be retrieved from the Pets table. GROUP BY Name: Groups the results by the Name column, so that each unique name is counted. ORDER BY NameCount DESC: Orders the results by the count in descending order, so the most common name appears first. LIMIT 1: Limits the result to just one row, which will be the most common pet name)
+
+11. SELECT COUNT(*) FROM Pets;
+
+12. SELECT * FROM Pets WHERE Kind='Bird' AND Age >= 22 AND Sex='male';
